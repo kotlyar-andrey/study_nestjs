@@ -1,0 +1,505 @@
+{
+  "groups": [
+    {
+      "group_name": "behave family",
+      "words": [
+        {
+          "english": "behave",
+          "russian": "вести себя, поступать",
+          "ukrainian": "поводитися, чинити"
+        },
+        {
+          "english": "behavior",
+          "russian": "поведение",
+          "ukrainian": "поведінка"
+        },
+        {
+          "english": "misbehave",
+          "russian": "плохо себя вести, баловаться",
+          "ukrainian": "погано поводитися, пустувати"
+        },
+        {
+          "english": "behave oneself",
+          "russian": "вести себя прилично, слушаться",
+          "ukrainian": "поводитися пристойно, слухатися"
+        }
+      ]
+    },
+    {
+      "group_name": "look family",
+      "words": [
+        {
+          "english": "look",
+          "russian": "смотреть, выглядеть, взгляд",
+          "ukrainian": "дивитися, виглядати, погляд"
+        },
+        {
+          "english": "look after",
+          "russian": "присматривать за, заботиться",
+          "ukrainian": "доглядати за, дбати"
+        },
+        {
+          "english": "look at",
+          "russian": "смотреть на",
+          "ukrainian": "дивитися на"
+        },
+        {
+          "english": "look for",
+          "russian": "искать",
+          "ukrainian": "шукати"
+        },
+        {
+          "english": "look forward to",
+          "russian": "ждать с нетерпением",
+          "ukrainian": "чекати з нетерпінням"
+        },
+        {
+          "english": "look into",
+          "russian": "изучать, расследовать",
+          "ukrainian": "вивчати, розслідувати"
+        },
+        {
+          "english": "look out",
+          "russian": "осторожно, выглядывать",
+          "ukrainian": "обережно, виглядати"
+        },
+        {
+          "english": "look over",
+          "russian": "просматривать, осматривать",
+          "ukrainian": "переглядати, оглядати"
+        },
+        {
+          "english": "look up",
+          "russian": "искать (в словаре), улучшаться (о делах)",
+          "ukrainian": "шукати (в словнику), поліпшуватися (про справи)"
+        },
+        {
+          "english": "lookup",
+          "russian": "поиск (в словаре)",
+          "ukrainian": "пошук (у словнику)"
+        },
+        {
+          "english": "outlook",
+          "russian": "мировоззрение, перспектива, вид",
+          "ukrainian": "світогляд, перспектива, вигляд"
+        },
+        {
+          "english": "overlook",
+          "russian": "упускать из виду, игнорировать, выходить на (об окне)",
+          "ukrainian": "пропускати з виду, ігнорувати, виходити на (про вікно)"
+        }
+      ]
+    },
+    {
+      "group_name": "act family",
+      "words": [
+        {
+          "english": "act",
+          "russian": "действовать, поступок, акт",
+          "ukrainian": "діяти, вчинок, акт"
+        },
+        {
+          "english": "action",
+          "russian": "действие, деятельность, акция",
+          "ukrainian": "дія, діяльність, акція"
+        },
+        {
+          "english": "active",
+          "russian": "активный, деятельный",
+          "ukrainian": "активний, діяльний"
+        },
+        { "english": "actively", "russian": "активно", "ukrainian": "активно" },
+        {
+          "english": "activity",
+          "russian": "активность, деятельность",
+          "ukrainian": "активність, діяльність"
+        },
+        { "english": "actor", "russian": "актер", "ukrainian": "актор" },
+        { "english": "actress", "russian": "актриса", "ukrainian": "актриса" },
+        {
+          "english": "enact",
+          "russian": "предписывать, вводить в действие (закон)",
+          "ukrainian": "наказувати, вводити в дію (закон)"
+        },
+        {
+          "english": "react",
+          "russian": "реагировать",
+          "ukrainian": "реагувати"
+        },
+        { "english": "reaction", "russian": "реакция", "ukrainian": "реакція" },
+        {
+          "english": "interactive",
+          "russian": "интерактивный",
+          "ukrainian": "інтерактивний"
+        }
+      ]
+    },
+    {
+      "group_name": "form family",
+      "words": [
+        {
+          "english": "form",
+          "russian": "форма, формировать",
+          "ukrainian": "форма, формувати"
+        },
+        {
+          "english": "formal",
+          "russian": "формальный, официальный",
+          "ukrainian": "формальний, офіційний"
+        },
+        {
+          "english": "formally",
+          "russian": "формально, официально",
+          "ukrainian": "формально, офіційно"
+        },
+        {
+          "english": "format",
+          "russian": "формат, форматировать",
+          "ukrainian": "формат, форматувати"
+        },
+        {
+          "english": "formation",
+          "russian": "формирование, образование",
+          "ukrainian": "формування, освіта"
+        },
+        {
+          "english": "inform",
+          "russian": "информировать, сообщать",
+          "ukrainian": "інформувати, повідомляти"
+        },
+        {
+          "english": "informal",
+          "russian": "неформальный",
+          "ukrainian": "неформальний"
+        },
+        {
+          "english": "information",
+          "russian": "информация, сведения",
+          "ukrainian": "інформація, відомості"
+        },
+        {
+          "english": "informative",
+          "russian": "информативный",
+          "ukrainian": "інформативний"
+        },
+        {
+          "english": "perform",
+          "russian": "выполнять, выступать",
+          "ukrainian": "виконувати, виступати"
+        },
+        {
+          "english": "performance",
+          "russian": "выступление, исполнение, производительность",
+          "ukrainian": "виступ, виконання, продуктивність"
+        },
+        {
+          "english": "reform",
+          "russian": "реформа, реформировать",
+          "ukrainian": "реформа, реформувати"
+        },
+        {
+          "english": "uniform",
+          "russian": "униформа, единообразный",
+          "ukrainian": "уніформа, одноманітний"
+        }
+      ]
+    },
+    {
+      "group_name": "direct family",
+      "words": [
+        {
+          "english": "direct",
+          "russian": "направлять, прямой, непосредственный",
+          "ukrainian": "направляти, прямий, безпосередній"
+        },
+        {
+          "english": "directly",
+          "russian": "напрямую, непосредственно",
+          "ukrainian": "напряму, безпосередньо"
+        },
+        {
+          "english": "direction",
+          "russian": "направление, руководство",
+          "ukrainian": "напрямок, керівництво"
+        },
+        {
+          "english": "director",
+          "russian": "директор, режиссер",
+          "ukrainian": "директор, режисер"
+        },
+        {
+          "english": "directory",
+          "russian": "справочник, каталог (папка)",
+          "ukrainian": "довідник, каталог (папка)"
+        },
+        {
+          "english": "redirect",
+          "russian": "перенаправлять",
+          "ukrainian": "перенаправляти"
+        },
+        {
+          "english": "indirect",
+          "russian": "косвенный",
+          "ukrainian": "непрямий"
+        },
+        {
+          "english": "indirectly",
+          "russian": "косвенно",
+          "ukrainian": "непрямо"
+        }
+      ]
+    },
+    {
+      "group_name": "write family",
+      "words": [
+        { "english": "write", "russian": "писать", "ukrainian": "писати" },
+        {
+          "english": "writer",
+          "russian": "писатель",
+          "ukrainian": "письменник"
+        },
+        {
+          "english": "writing",
+          "russian": "письмо (процесс), письменный",
+          "ukrainian": "письмо (процес), письмовий"
+        },
+        {
+          "english": "written",
+          "russian": "написанный",
+          "ukrainian": "написаний"
+        },
+        {
+          "english": "handwriting",
+          "russian": "почерк",
+          "ukrainian": "почерк"
+        },
+        {
+          "english": "rewrite",
+          "russian": "переписывать",
+          "ukrainian": "переписувати"
+        },
+        {
+          "english": "typewrite",
+          "russian": "печатать на машинке",
+          "ukrainian": "друкувати на машинці"
+        },
+        {
+          "english": "underwrite",
+          "russian": "гарантировать, страховать",
+          "ukrainian": "гарантувати, страхувати"
+        }
+      ]
+    },
+    {
+      "group_name": "break family",
+      "words": [
+        {
+          "english": "break",
+          "russian": "ломать, перерыв, разрыв",
+          "ukrainian": "ламати, перерва, розрив"
+        },
+        {
+          "english": "break down",
+          "russian": "ломаться, сломить, разрушаться, анализировать, терять самообладание",
+          "ukrainian": "ламатися, зломити, руйнуватися, аналізувати, втрачати самовладання"
+        },
+        {
+          "english": "break in",
+          "russian": "вламываться, прерывать",
+          "ukrainian": "вламуватися, переривати"
+        },
+        {
+          "english": "break out",
+          "russian": "вспыхивать (о войне, эпидемии), вырваться",
+          "ukrainian": "спалахувати (про війну, епідемію), вирватися"
+        },
+        {
+          "english": "break up",
+          "russian": "расставаться, распадаться, прекращать (встречу)",
+          "ukrainian": "розлучатися, розпадатися, припиняти (зустріч)"
+        },
+        {
+          "english": "breakage",
+          "russian": "поломка, повреждение",
+          "ukrainian": "поломка, пошкодження"
+        },
+        {
+          "english": "breakdown",
+          "russian": "поломка, срыв, анализ",
+          "ukrainian": "поломка, зрив, аналіз"
+        },
+        {
+          "english": "breaker",
+          "russian": "выключатель, волнорез",
+          "ukrainian": "вимикач, хвилеріз"
+        },
+        {
+          "english": "breakfast",
+          "russian": "завтрак",
+          "ukrainian": "сніданок"
+        },
+        {
+          "english": "breaking",
+          "russian": "ломка, разрушение (также причастие)",
+          "ukrainian": "ломка, руйнування (також дієприкметник)"
+        },
+        {
+          "english": "breakthrough",
+          "russian": "прорыв, достижение",
+          "ukrainian": "прорив, досягнення"
+        },
+        {
+          "english": "broken",
+          "russian": "сломанный, разбитый",
+          "ukrainian": "зламаний, розбитий"
+        },
+        {
+          "english": "outbreak",
+          "russian": "вспышка (болезни, насилия)",
+          "ukrainian": "спалах (хвороби, насильства)"
+        }
+      ]
+    },
+    {
+      "group_name": "appear family",
+      "words": [
+        {
+          "english": "appear",
+          "russian": "появляться, казаться",
+          "ukrainian": "з'являтися, здаватися"
+        },
+        {
+          "english": "appearance",
+          "russian": "внешний вид, появление",
+          "ukrainian": "зовнішній вигляд, поява"
+        },
+        {
+          "english": "apparently",
+          "russian": "по-видимому, очевидно",
+          "ukrainian": "мабуть, очевидно"
+        },
+        {
+          "english": "disappear",
+          "russian": "исчезать",
+          "ukrainian": "зникати"
+        },
+        {
+          "english": "reappear",
+          "russian": "вновь появляться",
+          "ukrainian": "знову з'являтися"
+        }
+      ]
+    },
+    {
+      "group_name": "create family",
+      "words": [
+        {
+          "english": "create",
+          "russian": "создавать, творить",
+          "ukrainian": "створювати, творити"
+        },
+        {
+          "english": "creation",
+          "russian": "создание, творение",
+          "ukrainian": "створення, творіння"
+        },
+        {
+          "english": "creative",
+          "russian": "творческий",
+          "ukrainian": "творчий"
+        },
+        {
+          "english": "creativity",
+          "russian": "творчество, креативность",
+          "ukrainian": "творчість, креативність"
+        },
+        {
+          "english": "creator",
+          "russian": "создатель, творец",
+          "ukrainian": "створювач, творець"
+        },
+        { "english": "creature", "russian": "существо", "ukrainian": "істота" },
+        {
+          "english": "recreate",
+          "russian": "воссоздавать",
+          "ukrainian": "відтворювати"
+        },
+        {
+          "english": "recreation",
+          "russian": "отдых, восстановление сил, воссоздание",
+          "ukrainian": "відпочинок, відновлення сил, відтворення"
+        }
+      ]
+    },
+    {
+      "group_name": "sense family",
+      "words": [
+        {
+          "english": "sense",
+          "russian": "чувство, смысл, ощущение",
+          "ukrainian": "почуття, сенс, відчуття"
+        },
+        {
+          "english": "sensible",
+          "russian": "разумный, здравомыслящий, практичный",
+          "ukrainian": "розумний, розсудливий, практичний"
+        },
+        {
+          "english": "sensibly",
+          "russian": "разумно, здраво",
+          "ukrainian": "розумно, розсудливо"
+        },
+        {
+          "english": "sensitive",
+          "russian": "чувствительный, нежный, деликатный",
+          "ukrainian": "чутливий, ніжний, делікатний"
+        },
+        {
+          "english": "sensitively",
+          "russian": "чувствительно, деликатно",
+          "ukrainian": "чутливо, делікатно"
+        },
+        {
+          "english": "sensitivity",
+          "russian": "чувствительность, чуткость",
+          "ukrainian": "чутливість, тонкість"
+        },
+        {
+          "english": "sensation",
+          "russian": "сенсация, ощущение, чувство",
+          "ukrainian": "сенсація, відчуття, почуття"
+        },
+        {
+          "english": "sensational",
+          "russian": "сенсационный, поразительный",
+          "ukrainian": "сенсаційний, вражаючий"
+        },
+        {
+          "english": "senseless",
+          "russian": "бессмысленный, неразумный, без сознания",
+          "ukrainian": "безглуздий, нерозумний, непритомний"
+        },
+        {
+          "english": "nonsense",
+          "russian": "чепуха, бессмыслица",
+          "ukrainian": "нісенітниця, безглуздя"
+        },
+        {
+          "english": "essense",
+          "russian": "суть, сущность",
+          "ukrainian": "суть, сутність"
+        },
+        {
+          "english": "essential",
+          "russian": "существенный, важный, основной",
+          "ukrainian": "суттєвий, важливий, основний"
+        },
+        {
+          "english": "essentially",
+          "russian": "по существу, в сущности",
+          "ukrainian": "по суті, в сутності"
+        }
+      ]
+    }
+  ]
+}
