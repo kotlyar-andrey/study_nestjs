@@ -2,38 +2,36 @@ import {
     Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, Patch, Post, Put, Query, Res
 } from '@nestjs/common';
 
+import { CoffeesService } from './coffees.service';
+
 @Controller('coffees')
 export class CoffeesController {
-  private coffeesList = Array.from(
-    { length: 20 },
-    (_, index) => `coffee #${index + 1}`,
-  );
+  constructor(private readonly coffeesService: CoffeesService) {}
 
   @Get()
   findAll(@Query() paginationQuery) {
-    const { limit, offset } = paginationQuery;
-    return this.coffeesList.slice(offset * limit, (Number(offset) + 1) * limit);
+    // const { limit, offset } = paginationQuery;
+    return this.coffeesService.findAll();
   }
 
   @Get(':id')
   findOne(@Param('id') id: number) {
-    return this.coffeesList[id];
+    return this.coffeesService.findOne(Number(id));
   }
 
   @Post()
   @HttpCode(HttpStatus.GONE)
   create(@Body() body) {
-    return body;
+    this.coffeesService.create(body);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() body) {
-    this.coffeesList[id] = body;
-    return this.coffeesList[id];
+  update(@Param('id') id: number, @Body() body) {
+    this.coffeesService.update(Number(id), body);
   }
 
   @Delete(':id')
   remove(@Param('id') id: number) {
-    this.coffeesList.splice(id, 1);
+    this.coffeesService.remove(Number(id));
   }
 }
