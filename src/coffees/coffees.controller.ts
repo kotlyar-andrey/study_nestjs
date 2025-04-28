@@ -18,18 +18,18 @@ export class CoffeesController {
 
   @Get(':id')
   findOne(@Param('id') id: number) {
-    return this.coffeesService.findOne(Number(id));
+    return this.coffeesService.findOne(id);
   }
 
   @Post()
-  @HttpCode(HttpStatus.GONE)
+  @HttpCode(HttpStatus.CREATED)
   create(@Body() createCoffeeDto: CreateCoffeeDto) {
     this.coffeesService.create(createCoffeeDto);
   }
 
   @Patch(':id')
   update(@Param('id') id: number, @Body() updateCoffeeDto: UpdateCoffeeDto) {
-    this.coffeesService.update(Number(id), updateCoffeeDto);
+    this.coffeesService.update(id, updateCoffeeDto);
   }
 
   @Delete(':id')

@@ -13,6 +13,15 @@ export class CoffeesService {
     },
   ];
 
+  private getNextId() {
+    return (
+      this.coffees.reduce(
+        (current, result) => (current.id > result.id ? current : result),
+        this.coffees[0],
+      ).id + 1
+    );
+  }
+
   findAll() {
     return this.coffees;
   }
@@ -26,7 +35,8 @@ export class CoffeesService {
   }
 
   create(createCoffeeDto: any) {
-    this.coffees.push(createCoffeeDto);
+    const nextId = this.getNextId();
+    this.coffees.push({ id: nextId, ...createCoffeeDto });
   }
 
   update(id: number, updateCoffeeDto: any) {
