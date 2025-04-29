@@ -1,12 +1,13 @@
-import { Repository } from 'typeorm';
+import { Connection, DataSource, Repository } from 'typeorm';
 
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
+import { InjectDataSource, InjectRepository } from '@nestjs/typeorm';
 
 import { CreateCoffeeDto } from './dto/create-coffee.dto';
 import { PaginationQueryDto } from './dto/pagination-query.dto';
 import { UpdateCoffeeDto } from './dto/update-coffee.dto';
 import { Coffee } from './entities/coffee.entity';
+import { Event } from './entities/event.entity';
 import { Flavor } from './entities/flavor.entity';
 
 @Injectable()
@@ -16,6 +17,10 @@ export class CoffeesService {
     private readonly coffeeRepository: Repository<Coffee>,
     @InjectRepository(Flavor)
     private readonly flavorRepository: Repository<Flavor>,
+    @InjectDataSource()
+    private dataSource: DataSource,
+    @InjectRepository(Event)
+    private readonly eventRepository: Repository<Event>,
   ) {}
 
   findAll(paginationQuery: PaginationQueryDto) {
@@ -69,6 +74,38 @@ export class CoffeesService {
   async remove(id: number) {
     const coffee = await this.findOne(id);
     return this.coffeeRepository.remove(coffee);
+  }
+
+  async recommendCoffee(coffee: Coffee) {
+    const queryRunner = this.dataSource.createQueryRunner();
+    await queryRunner.connect();
+    await queryRunner.startTransaction();
+    try {
+      coffee.recommendations++;
+      const recommendEvent = new Event();
+      recommendEvent.name = 'recommend_coffee';
+      recommendEvent.type = 'coffee';
+      recommendEvent.payload = { coffeeId: coffee.id };
+      await queryRunner.manager.save(coffee);
+      await queryRunner.manager.save(recommendEvent);
+      await queryRunner.commitTransaction();
+    } catch (error) {
+      await queryRunner.rollbackTransaction();
+    } finally {
+      await queryRunner.release();
+    }
+  }
+
+  async likeCoffee(id: number) {
+    const coffee = await this.findOne(id);
+    if (!coffee) {
+      throw new NotFoundException('not found error');
+    }
+    this.recommendCoffee(coffee);
+  }
+
+  findAllEvents() {
+    return this.eventRepository.find();
   }
 
   private async preloadFlavorByName(name: string): Promise<Flavor> {
