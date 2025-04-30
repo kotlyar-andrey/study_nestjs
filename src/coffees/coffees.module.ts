@@ -14,12 +14,12 @@ class ConfigService {}
 class DevelopmentConfigService {}
 class ProductionConfigService {}
 
-@Injectable()
-export class CoffeeBrandFactory {
-  create() {
-    return ['buddy brew', 'nescafe'];
-  }
-}
+// @Injectable()
+// export class CoffeeBrandFactory {
+//   create() {
+//     return ['buddy brew', 'nescafe'];
+//   }
+// }
 
 @Module({
   imports: [TypeOrmModule.forFeature([Coffee, Flavor, Event])],
@@ -28,13 +28,25 @@ export class CoffeeBrandFactory {
   providers: [
     CoffeesService,
     // { provide: COFFEE_BRANDS, useValue: ['buddy brew', 'nescafe'] }, // provide array with custom name
+
     // { provide: COFFEE_BRANDS, useFactory: () => ['buddy brew', 'nescafe'] },
-    CoffeeBrandFactory,
+
+    // CoffeeBrandFactory,
+    // {
+    //   provide: COFFEE_BRANDS,
+    //   useFactory: (brandFactory: CoffeeBrandFactory) => brandFactory.create(),
+    //   inject: [CoffeeBrandFactory],
+    // }, // useFactory example
+
     {
       provide: COFFEE_BRANDS,
-      useFactory: (brandFactory: CoffeeBrandFactory) => brandFactory.create(),
-      inject: [CoffeeBrandFactory],
+      useFactory: async (): Promise<string[]> => {
+        const coffeeBrands = await Promise.resolve(['buddy brew', 'nescafe']);
+        console.log('[!] async factory');
+        return coffeeBrands;
+      }, //  async useFactory example
     },
+
     {
       provide: ConfigService,
       useClass:
