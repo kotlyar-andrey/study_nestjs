@@ -1,4 +1,4 @@
-import { Injectable, Module } from '@nestjs/common';
+import { Injectable, Module, Scope } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { COFFEE_BRANDS } from './coffees.constants';
@@ -45,6 +45,7 @@ class ProductionConfigService {}
         console.log('[!] async factory');
         return coffeeBrands;
       }, //  async useFactory example
+      scope: Scope.REQUEST,
     },
 
     {
