@@ -1,6 +1,7 @@
 import { DataSource, Repository } from 'typeorm';
 
 import { Inject, Injectable, NotFoundException, Scope } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import { InjectDataSource, InjectRepository } from '@nestjs/typeorm';
 
 import { COFFEE_BRANDS } from './coffees.constants';
@@ -11,7 +12,7 @@ import { Coffee } from './entities/coffee.entity';
 import { Event } from './entities/event.entity';
 import { Flavor } from './entities/flavor.entity';
 
-@Injectable({ scope: Scope.TRANSIENT })
+@Injectable({ scope: Scope.DEFAULT })
 export class CoffeesService {
   constructor(
     @InjectRepository(Coffee)
@@ -23,9 +24,12 @@ export class CoffeesService {
     @InjectRepository(Event)
     private readonly eventRepository: Repository<Event>,
     @Inject(COFFEE_BRANDS) coffeeBrands: string[],
+
+    private readonly configService: ConfigService,
   ) {
     // console.log(coffeeBrands);
     console.log('CoffeesService instantiated');
+    console.log(configService.get<string>('DATABASE_HOST'));
   }
 
   findAll(paginationQuery: PaginationQueryDto) {

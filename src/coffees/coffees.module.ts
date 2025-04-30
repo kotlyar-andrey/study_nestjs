@@ -1,4 +1,5 @@
 import { Injectable, Module, Scope } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { COFFEE_BRANDS } from './coffees.constants';
@@ -22,7 +23,7 @@ class ProductionConfigService {}
 // }
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Coffee, Flavor, Event])],
+  imports: [TypeOrmModule.forFeature([Coffee, Flavor, Event]), ConfigModule],
   controllers: [CoffeesController],
   // providers: [{provide: CoffeesService, useValue: new MockService()}], // MockService instead of real CoffeesService
   providers: [
@@ -45,16 +46,16 @@ class ProductionConfigService {}
         console.log('[!] async factory');
         return coffeeBrands;
       }, //  async useFactory example
-      scope: Scope.REQUEST,
+      scope: Scope.DEFAULT,
     },
 
-    {
-      provide: ConfigService,
-      useClass:
-        process.env.NODE_ENV === 'development'
-          ? DevelopmentConfigService
-          : ProductionConfigService, // dynamic Service depends on environment mode
-    },
+    // {
+    //   provide: ConfigService,
+    //   useClass:
+    //     process.env.NODE_ENV === 'development'
+    //       ? DevelopmentConfigService
+    //       : ProductionConfigService, // dynamic Service depends on environment mode
+    // },
   ],
   exports: [CoffeesService],
 })

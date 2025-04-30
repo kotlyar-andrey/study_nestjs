@@ -1,3 +1,4 @@
+import * as Joi from '@hapi/joi';
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -11,7 +12,14 @@ import { DatabaseModule } from './database/database.module';
 @Module({
   imports: [
     CoffeesModule,
-    ConfigModule.forRoot({ isGlobal: true, envFilePath: '.env' }),
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath: '.env',
+      validationSchema: Joi.object({
+        DATABASE_HOST: Joi.required(),
+        DATABASE_PORT: Joi.number().default(5432),
+      }),
+    }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
       useFactory: (configService: ConfigService) => ({
@@ -19,7 +27,7 @@ import { DatabaseModule } from './database/database.module';
         host: 'localhost',
         port: 5432,
         username: 'postgres',
-        password: configService.get<string>('POSTGRES_PASSWORD'),
+        password: configService.get<string>('DATABASE_PASSWORD'),
         database: 'postgres',
         autoLoadEntities: true,
         synchronize: true,
