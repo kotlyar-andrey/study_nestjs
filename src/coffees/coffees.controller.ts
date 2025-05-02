@@ -1,3 +1,5 @@
+import { Public } from 'src/common/decorators/public.decorator';
+
 import {
   Body,
   Controller,
@@ -11,6 +13,7 @@ import {
   Put,
   Query,
   Res,
+  SetMetadata,
   UsePipes,
   ValidationPipe,
 } from '@nestjs/common';
@@ -26,6 +29,7 @@ export class CoffeesController {
   constructor(private readonly coffeesService: CoffeesService) {}
 
   @UsePipes(ValidationPipe) // the same what on line 23, but only for this one method
+  @Public()
   @Get()
   findAll(@Query() paginationQuery: PaginationQueryDto) {
     return this.coffeesService.findAll(paginationQuery);
