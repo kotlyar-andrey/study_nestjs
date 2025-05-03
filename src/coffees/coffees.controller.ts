@@ -6,6 +6,7 @@ import {
     Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, Patch, Post, Put, Query, Res,
     SetMetadata, UsePipes, ValidationPipe
 } from '@nestjs/common';
+import { ApiResponse, ApiTags } from '@nestjs/swagger';
 
 import { CoffeesService } from './coffees.service';
 import { CreateCoffeeDto } from './dto/create-coffee.dto';
@@ -13,10 +14,12 @@ import { PaginationQueryDto } from './dto/pagination-query.dto';
 import { UpdateCoffeeDto } from './dto/update-coffee.dto';
 
 // @UsePipes(ValidationPipe) // or @UsePipes(new ValidationPipe({configObject}))
+@ApiTags('coffees')
 @Controller('coffees')
 export class CoffeesController {
   constructor(private readonly coffeesService: CoffeesService) {}
 
+  @ApiResponse({ status: 403, description: 'Forbidden' })
   @UsePipes(ValidationPipe) // the same what on line 23, but only for this one method
   @Public()
   @Get()
