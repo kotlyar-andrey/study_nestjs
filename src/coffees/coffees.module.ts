@@ -1,3 +1,5 @@
+import { EventSchema } from 'src/events/entities/event.entity';
+
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 
@@ -11,6 +13,10 @@ import { Coffee, CoffeeSchema } from './entities/coffee.entity';
       {
         name: Coffee.name,
         schema: CoffeeSchema,
+      },
+      {
+        name: Event.name,
+        schema: EventSchema,
       },
     ]),
   ],

@@ -18,6 +18,11 @@ export class CoffeesController {
     return this.coffeesService.findAll(paginationQuery);
   }
 
+  @Get('events')
+  findAllEvents() {
+    return this.coffeesService.findAllEvents();
+  }
+
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.coffeesService.findOne(id);
@@ -37,5 +42,10 @@ export class CoffeesController {
   @Delete(':id')
   remove(@Param('id') id: string) {
     this.coffeesService.remove(id);
+  }
+
+  @Post(':id/like')
+  likeCoffee(@Param('id') id: string) {
+    this.coffeesService.likeCoffee(id);
   }
 }

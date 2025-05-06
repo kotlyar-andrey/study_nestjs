@@ -3,12 +3,15 @@ import { Document } from 'mongoose';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
 @Schema()
-export class Coffee {
+export class Coffee extends Document {
   @Prop()
   name: string;
 
   @Prop()
   brand: string;
+
+  @Prop({ default: 0 })
+  recommendations: number;
 
   @Prop([String])
   flavors: string[];
