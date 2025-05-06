@@ -6,29 +6,25 @@ import {
     Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, Patch, Post, Put, Query, Res,
     SetMetadata, UsePipes, ValidationPipe
 } from '@nestjs/common';
-import { ApiResponse, ApiTags } from '@nestjs/swagger';
 
+// import { ApiResponse, ApiTags } from '@nestjs/swagger';
 import { CoffeesService } from './coffees.service';
 import { CreateCoffeeDto } from './dto/create-coffee.dto';
 import { PaginationQueryDto } from './dto/pagination-query.dto';
 import { UpdateCoffeeDto } from './dto/update-coffee.dto';
 
 // @UsePipes(ValidationPipe) // or @UsePipes(new ValidationPipe({configObject}))
-@ApiTags('coffees')
+// @ApiTags('coffees')
 @Controller('coffees')
 export class CoffeesController {
   constructor(private readonly coffeesService: CoffeesService) {}
 
-  @ApiResponse({ status: 403, description: 'Forbidden' })
+  // @ApiResponse({ status: 403, description: 'Forbidden' })
   @UsePipes(ValidationPipe) // the same what on line 23, but only for this one method
   @Public()
   @Get()
-  async findAll(
-    @Protocol('https') protocol: string,
-    @Query() paginationQuery: PaginationQueryDto,
-  ) {
-    console.log('protocol: ', protocol);
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+  findAll(@Query() paginationQuery: PaginationQueryDto) {
+    // const { limit, offset } = paginationQuery;
     return this.coffeesService.findAll(paginationQuery);
   }
 
@@ -38,32 +34,28 @@ export class CoffeesController {
   }
 
   @Get(':id')
-  findOne(@Param('id', ParseIntPipe) id: number) {
-    console.log('id: ', id, typeof id);
+  findOne(@Param('id') id: string) {
     return this.coffeesService.findOne(id);
   }
 
   @Post(':id/like')
-  likeCoffee(@Param('id') id: number) {
+  likeCoffee(@Param('id') id: string) {
     return this.coffeesService.likeCoffee(id);
   }
 
   @Post()
   @HttpCode(HttpStatus.CREATED)
   create(@Body() createCoffeeDto: CreateCoffeeDto) {
-    this.coffeesService.create(createCoffeeDto);
+    return this.coffeesService.create(createCoffeeDto);
   }
 
   @Patch(':id')
-  update(
-    @Param('id') id: number,
-    @Body(ValidationPipe) updateCoffeeDto: UpdateCoffeeDto,
-  ) {
+  update(@Param('id') id: string, @Body() updateCoffeeDto: UpdateCoffeeDto) {
     this.coffeesService.update(id, updateCoffeeDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: number) {
-    this.coffeesService.remove(Number(id));
+  remove(@Param('id') id: string) {
+    this.coffeesService.remove(id);
   }
 }

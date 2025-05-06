@@ -1,32 +1,25 @@
-import { Injectable, Module, Scope } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
-import { TypeOrmModule } from '@nestjs/typeorm';
+import { EventSchema } from 'src/events/entities/event.entity';
+
+import { Module, Scope } from '@nestjs/common';
+import { MongooseModule } from '@nestjs/mongoose';
 
 import { COFFEE_BRANDS } from './coffees.constants';
 import { CoffeesController } from './coffees.controller';
 import { CoffeesService } from './coffees.service';
-import coffeesConfig from './config/coffees.config';
-import { Coffee } from './entities/coffee.entity';
-import { Event } from './entities/event.entity';
-import { Flavor } from './entities/flavor.entity';
-
-// class MockService {}
-
-// class ConfigService {}
-// class DevelopmentConfigService {}
-// class ProductionConfigService {}
-
-// @Injectable()
-// export class CoffeeBrandFactory {
-//   create() {
-//     return ['buddy brew', 'nescafe'];
-//   }
-// }
+import { Coffee, CoffeeSchema } from './entities/coffee.entity';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([Coffee, Flavor, Event]),
-    ConfigModule.forFeature(coffeesConfig),
+    MongooseModule.forFeature([
+      {
+        name: Coffee.name,
+        schema: CoffeeSchema,
+      },
+      {
+        name: Event.name,
+        schema: EventSchema,
+      },
+    ]),
   ],
   controllers: [CoffeesController],
   // providers: [{provide: CoffeesService, useValue: new MockService()}], // MockService instead of real CoffeesService
